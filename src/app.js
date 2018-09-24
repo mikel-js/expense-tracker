@@ -9,6 +9,7 @@ import configureStore from './store/configureStore'
 import { sortByAmount, sortByDate } from './actions/filters'
 import 'normalize-css/normalize.css'
 import './styles/styles.scss'
+import 'react-dates/lib/css/_datepicker.css'
 
 const store = configureStore()
 
@@ -26,7 +27,6 @@ const store = configureStore()
 // console.log(visibleExpenses)
 
 console.log(store.getState())
-
 const jsx = (
   <Provider store={store}>
     <AppRouter />
