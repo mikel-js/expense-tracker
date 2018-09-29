@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import AppRouter from './routers/AppRouter'
+import AppRouter, { history } from './routers/AppRouter'
 import { startSetExpenses } from './actions/expenses'
-import { setTextFilter } from './actions/filters'
+import { login, logout } from './actions/auth'
 import getVisibleExpenses  from './selectors/expenses'
 import configureStore from './store/configureStore'
 import { sortByAmount, sortByDate } from './actions/filters'
@@ -33,22 +33,34 @@ const jsx = (
     <AppRouter />
   </Provider>
 )
+let hasRendered = false
+const renderApp = ()=> {
+  if(!hasRendered) {
+    ReactDOM.render(jsx, document.getElementById('app'))
+    hasRendered = true
+  }
+}
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
-store.dispatch(startSetExpenses()).then(()=>{
-  ReactDOM.render(jsx, document.getElementById('app'))
-})
+
 
 firebase.auth().onAuthStateChanged((user)=> {
   if(user) {
-    console.log('log-in')
+    store.dispatch(login(user.uid))
+    store.dispatch(startSetExpenses()).then(()=>{
+      renderApp()
+      if (history.location.pathname === '/'){
+        history.push('/home')
+      }
+    })
   } else {
-    console.log('logout')
+    store.dispatch(logout())
+    renderApp()
+    history.push('/')
   }
 })
 // browserRouter-to create a new router
 // route for every single page
-
 // Making connection with React and redux
   // import provider in app.js. import connect in exp list
   // create new HOC and connect it
