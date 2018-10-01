@@ -8,7 +8,7 @@ export const LogIn = ({startLogin})=>{
       <div className='box-layout__box'>
         <h1 className='box-layout__title'>Expendify!</h1>
         <p>Let this app helps you start saving!</p>
-        <button onClick={startLogin} className='box-layout__button'>LogIn with Google</button>
+        <button onClick={startLogin} className='button'>LogIn with Google</button>
       </div>
       
     </div>

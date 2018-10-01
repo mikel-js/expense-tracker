@@ -1,12 +1,17 @@
+* {
+  box-sizing: border-box
+}
+
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
 }
 // pra 10 yung font
 body {
   color: $dark-grey;
   font-family: Helvetica, Arial, sans-sarif;
   font-size: $m-size;
-  line-height: 1.6
+  line-height: 1.6;
+  margin-top: 0
 }
 
 button {

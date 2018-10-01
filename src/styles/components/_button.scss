@@ -1,8 +1,19 @@
-.box-layout__button {
+.button {
   background-color: $off-blue;
   border: none;
   color: white;
+  display: inline-block;
   font-size: $fontS-l;
   font-weight: 300;
+  line-height: 1;
   padding: 1.2rem 1rem;
+  text-decoration: none;
+}
+
+.button--link {
+  background: none;
+}
+
+.button--secondary {
+  background: red
 }
