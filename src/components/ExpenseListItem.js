@@ -5,37 +5,38 @@ import numeral from 'numeral'
 
 numeral.register('locale', 'fr', {
   delimiters: {
-      thousands: ' ',
-      decimal: ','
+    thousands: ' ',
+    decimal: ','
   },
   abbreviations: {
-      thousand: 'k',
-      million: 'm',
-      billion: 'b',
-      trillion: 't'
+    thousand: 'k',
+    million: 'm',
+    billion: 'b',
+    trillion: 't'
   },
-  ordinal : function (number) {
-      return number === 1 ? 'er' : 'ème';
+  ordinal: function (number) {
+    return number === 1 ? 'er' : 'ème';
   },
   currency: {
-      symbol: '€'
+    symbol: '€'
   }
 });
 
 // switch between locales
 numeral.locale('fr');
 
-const ExpenseListItem =( {description, amount, createdAt, id, dispatch } )=> (
-  <div>
-    <Link to={`/edit/${id}`}>
-      <p>{description}</p>
-    </Link>
-    <p>
-      {numeral(amount/ 100).format('$0,0.00')} 
-      :
-      {moment(createdAt).format('Do MMMM, YYYY')}
-    </p>
-  </div>
+const ExpenseListItem = ({ description, amount, createdAt, id, dispatch }) => (
+
+  <Link className='list-item' to={`/edit/${id}`}>
+    <div>
+      <h3 className='list-item__title'>{description}</h3>
+      <span className='list-item__subtitle'>{moment(createdAt).format('Do MMMM, YYYY')}</span>
+    </div>
+    <h3 className='list-item__data'>{numeral(amount / 100).format('$0,0.00')}</h3>
+
+  </Link>
+
+
 )
 
 export default ExpenseListItem
