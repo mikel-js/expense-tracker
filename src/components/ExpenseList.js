@@ -35,25 +35,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(ExpenseList)
 
-// const ConnectedExpenseList = connect((state)=> {
-//   return {
-//     expenses: state.expenses
-//   }
-// })(ExpenseList)
-
-// {
-//   props.expenses.map((expense, indx)=>(
-//     <ExpenseListItem 
-//       description={expense.description}
-//       key={indx}
-//       amount={expense.amount}
-//       createdAt={expense.createdAt}
-//     />
-//   ))
-// }
-// yung expense dti e state.expense
-
-
-// export default ConnectedExpenseList
-// yung props s taas e galing s mapstatetoprops tz kinonek
 

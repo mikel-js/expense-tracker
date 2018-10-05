@@ -23,7 +23,6 @@ export const LogIn = ({ startLogin, startLoginFb }) => {
         </button>
         </div>
       </div>
-
     </div>
   )
 }

@@ -1,11 +1,10 @@
-// import getExpensesTotal from '../..selectors/expenses-total'
 const getExpensesTotal = (expenses) => {
   return (
-      expenses.map((expense)=>{
-        return expense.amount
-      }).reduce((total, amount)=> total + amount, 0)
-    ) 
-  }
+    expenses.map((expense) => {
+      return expense.amount
+    }).reduce((total, amount) => total + amount, 0)
+  )
+}
 
 const expenses = [{
   id: '1',

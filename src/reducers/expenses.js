@@ -1,4 +1,3 @@
-// expense reducer
 const expensesReducerDefaultState = []
 
 const expensesReducer = (state=expensesReducerDefaultState, action)=> {

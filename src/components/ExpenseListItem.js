@@ -22,7 +22,6 @@ numeral.register('locale', 'fr', {
   }
 });
 
-// switch between locales
 numeral.locale('fr');
 
 const ExpenseListItem = ({ description, amount, createdAt, id, dispatch }) => (
@@ -41,9 +40,3 @@ const ExpenseListItem = ({ description, amount, createdAt, id, dispatch }) => (
 
 export default ExpenseListItem
 
-// const ExpenseListItem =(props)=> (
-//   <div>
-//     <p>{props.description}</p>
-//     <p>{props.amount} - {props.createdAt}</p>
-//   </div>
-// )

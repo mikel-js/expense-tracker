@@ -40,9 +40,6 @@ class EditExpensePage extends React.Component {
           <button
             className='button button--secondary'
             onClick={() => {
-              
-              // props.dispatch(startRemoveExpense({ id: props.expense.id }))
-              // props.history.push('/')
               this.setState(() => ({
                 confirmation: true
               }))
@@ -58,9 +55,6 @@ class EditExpensePage extends React.Component {
   }
 }
 
-
-
-
 const mapStateToProps = (state, props) => {
   return {
     expense: state.expenses.find((expense) => {
@@ -69,12 +63,4 @@ const mapStateToProps = (state, props) => {
   }
 }
 
-
-
-
 export default connect(mapStateToProps)(EditExpensePage)
-
-// 1. sa expenselistitem gwa link. tz ung connect s react redx
-// sa mapstate props ggwa dn.
-// 3. import exmpense form
-// 4.import editExpennse tpos bguhin.
